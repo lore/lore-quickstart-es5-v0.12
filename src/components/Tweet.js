@@ -1,7 +1,16 @@
 var React = require('react');
 var moment = require('moment');
 
-module.exports = React.createClass({
+module.exports = lore.connect(function(getState, props){
+  var tweet = props.tweet;
+
+  return {
+    user: getState('user.byId', {
+      id: tweet.data.userId
+    })
+  };
+})(
+React.createClass({
   displayName: 'Tweet',
 
   propTypes: {
@@ -49,4 +58,5 @@ module.exports = React.createClass({
     );
   }
 
-});
+})
+);
