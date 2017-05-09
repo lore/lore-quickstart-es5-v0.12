@@ -1,5 +1,6 @@
 var React = require('react');
 var Tweet = require('./Tweet');
+var PayloadStates = require('../constants/PayloadStates');
 
 module.exports = lore.connect(function(getState, props){
   return {
@@ -42,6 +43,14 @@ React.createClass({
 
   render: function() {
     var tweets = this.props.tweets;
+
+    if (tweets.state === PayloadStates.FETCHING) {
+      return (
+        <h1 className="loading-text">
+          Loading...
+        </h1>
+      )
+    }
 
     return (
       <div className="feed">
