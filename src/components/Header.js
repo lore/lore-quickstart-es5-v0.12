@@ -1,5 +1,6 @@
 var React = require('react');
 var Router = require('react-router');
+var CreateButton = require('./CreateButton');
 
 module.exports = React.createClass({
   displayName: 'Header',
@@ -13,6 +14,7 @@ module.exports = React.createClass({
               Lore Quickstart
             </Router.Link>
           </div>
+          <CreateButton/>
         </div>
       </nav>
     );
