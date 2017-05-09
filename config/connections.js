@@ -137,9 +137,9 @@ module.exports = {
          * automatically be processed by the parse method of the corresponding model.
          */
 
-        // parse: function(attributes) {
-        //   return attributes;
-        // }
+        parse(attributes) {
+          return attributes.data;
+        }
 
       }
 
