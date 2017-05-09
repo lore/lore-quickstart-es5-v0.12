@@ -5,6 +5,10 @@ module.exports = {
       type: 'text',
       displayName: 'Message',
       placeholder: "What's happening?"
+    },
+    user: {
+      type: 'model',
+      model: 'user'
     }
   },
 
