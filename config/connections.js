@@ -141,6 +141,10 @@ module.exports = {
          */
 
         parse(attributes) {
+          this.meta = {
+            totalCount: attributes.meta.paginate.totalCount,
+            perPage: attributes.meta.paginate.perPage
+          };
           return attributes.data;
         }
 
