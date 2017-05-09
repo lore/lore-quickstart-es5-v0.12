@@ -1,7 +1,12 @@
 var React = require('react');
 var Tweet = require('./Tweet');
 
-module.exports = React.createClass({
+module.exports = lore.connect(function(getState, props){
+  return {
+    tweets: getState('tweet.find')
+  }
+})(
+React.createClass({
   displayName: 'Feed',
 
   propTypes: {
@@ -50,4 +55,5 @@ module.exports = React.createClass({
     );
   }
 
-});
+})
+);
